@@ -4,6 +4,7 @@ import { Helmet } from "react-helmet";
 import PropagateLoader from "react-spinners/PropagateLoader";
 import { motion } from "framer-motion";
 import { AiOutlineSearch } from "react-icons/ai";
+import { fetchFromAPI } from "../helpers";
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -13,7 +14,10 @@ const Product = () => {
 
   useEffect(async () => {
     setIsLoading(true);
-    const res = await fetch("http://localhost:5000/api/products");
+    const res = await fetch(
+      "https://ghost-lifestyle.herokuapp.com/api/products" ||
+        "http://localhost:5000"
+    );
     const products = await res.json();
     setProducts(products);
     setFilteredProducts(products);
