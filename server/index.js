@@ -13,10 +13,12 @@ app.use(cors());
 app.use("/api/products", productRoute);
 app.use("/api/payments", paymentRoute);
 
+const PORT = process.env.PORT || 5000;
+
 const startServer = async () => {
   await connectDb();
-  app.listen(process.env.PORT || 5000, () => {
-    console.log(`Server listening on PORT ${process.env.PORT}...`);
+  app.listen(PORT, () => {
+    console.log(`Server listening on port ${PORT}...`);
   });
 };
 
