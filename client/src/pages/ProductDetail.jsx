@@ -18,7 +18,9 @@ const ProductDetail = () => {
   // fetch single product data
   useEffect(async () => {
     setIsLoading(true);
-    const res = await fetch(`http://localhost:5000/api/products/${productId}`);
+    const res = await fetch(
+      `https://ghost-lifestyle.herokuapp.com/api/products/${productId}`
+    );
     const product = await res.json();
     setProduct(product);
     setIsLoading(false);

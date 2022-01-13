@@ -15,8 +15,7 @@ const Product = () => {
   useEffect(async () => {
     setIsLoading(true);
     const res = await fetch(
-      "https://ghost-lifestyle.herokuapp.com/api/products" ||
-        "http://localhost:5000"
+      "https://ghost-lifestyle.herokuapp.com/api/products"
     );
     const products = await res.json();
     setProducts(products);
