@@ -11,7 +11,9 @@ import { loadStripe } from "@stripe/stripe-js";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 
-const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
+const stripePromise = loadStripe(
+  `${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`
+);
 
 const ScrollToTop = ({ children }) => {
   const location = useLocation();
